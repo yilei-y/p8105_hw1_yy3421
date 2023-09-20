@@ -2,7 +2,7 @@
 title: "p8105_hw1_yy3421"
 author: "Yilei Yang"
 date: "2023-09-20"
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
