@@ -5,10 +5,6 @@ date: "2023-09-20"
 output: github_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
 # Problem 1:
 Load moderndive library:
 
@@ -20,11 +16,11 @@ early_january_weather
 
 Early January Weather Dataset:
 
-This dataset consists of 15 variables, including origin, year, month, day, hour, temperature, dew point, humidity, wind direction, wind speed, wind gust, precipitation, visibility, and hour time.
+This dataset consists of 15 variables. Some of the important weather variables include temperature, dew point, humidity, wind direction, wind speed, wind gust, precipitation, and visibility.
 
 The dataset consists of `r nrow(early_january_weather)` rows and `r ncol(early_january_weather)` columns.
 
-The mean temperature is `r mean(early_january_weather$temp)`.
+The mean temperature is `r mean(early_january_weather$temp)` degree Celsius.
 
 ```{r, scatterplot}
 library(tidyverse)
@@ -36,6 +32,11 @@ ggplot(
     color = humid
     )
   )+ geom_point()
+```
+
+Looking at the scatterplot, there is a overall increasing trend of the temperature until Jan 14th and a decreasing trend after Jan 14th. The humidity is generally low before Jan 11th and after Jan 15th. Between Jan 11th and 15th, the humidity is high with an approxiate average of 100.
+
+```{r}
 ggsave("scatterplot.pdf")
 ```
 
@@ -48,7 +49,10 @@ problem2_df = tibble(
   vec_char = letters[1:10],
   vec_factor = factor(c("Level I", "Level II", "Level III", "Level I", "Level II", "Level I", "Level III", "Level II", "Level I", "Level III")),
 )
+problem2_df
 ```
+
+Calculating mean values:
 
 ```{r, mean calculation}
 library(tidyverse)
