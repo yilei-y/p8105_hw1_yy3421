@@ -22,3 +22,17 @@ This dataset consists of 15 variables, including origin, year, month, day, hour,
 The dataset consists of `r nrow(early_january_weather)` rows and `r ncol(early_january_weather)` columns.
 
 The mean temperature is `r mean(early_january_weather$temp)`.
+
+```{r, scatterplot}
+library(tidyverse)
+ggplot(
+  early_january_weather, 
+  aes(
+    x = time_hour, 
+    y = temp,
+    color = humid
+    )
+  )+ geom_point()
+ggsave("scatterplot.pdf")
+```
+
