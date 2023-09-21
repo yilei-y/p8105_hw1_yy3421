@@ -15,4 +15,10 @@ data("early_january_weather")
 early_january_weather
 ```
 
+Early January Weather Dataset:
 
+This dataset consists of 15 variables, including origin, year, month, day, hour, temperature, dew point, humidity, wind direction, wind speed, wind gust, precipitation, visibility, and hour time.
+
+The dataset consists of `r nrow(early_january_weather)` rows and `r ncol(early_january_weather)` columns.
+
+The mean temperature is `r mean(early_january_weather$temp)`.
