@@ -9,6 +9,8 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+# Problem 1:
+
 ```{r}
 library(moderndive)
 data("early_january_weather")
@@ -35,4 +37,26 @@ ggplot(
   )+ geom_point()
 ggsave("scatterplot.pdf")
 ```
+
+# Problem 2:
+
+```{r}
+problem2_df = tibble(
+  sample_data = rnorm(10),
+  vec_log = sample_data > 0,
+  vec_char = letters[1:10],
+  vec_factor = factor(c("I", "II", "III", "I", "II", "I", "III", "II", "I", "III")),
+)
+```
+
+```{r, mean calculation}
+library(tidyverse)
+sample_data_mean = mean(pull(problem2_df, sample_data))
+vec_log_mean = mean(pull(problem2_df, vec_log))
+vec_char_mean = mean(pull(problem2_df, vec_char))
+vec_factor_mean = mean(pull(problem2_df, vec_factor))
+
+```
+
+The means of the first two columns, sample_data and vec_log, works. However, vec_char and vec_factor don't work for mean calculation.
 
